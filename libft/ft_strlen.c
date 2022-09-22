@@ -6,7 +6,7 @@
 /*   By: nhamdan <nhamdan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 10:26:21 by nhamdan           #+#    #+#             */
-/*   Updated: 2021/11/28 07:28:59 by nhamdan          ###   ########.fr       */
+/*   Updated: 2022/09/22 16:56:27 by nhamdan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
+	size_t i;
 
+	if (!s)
+		return 0;
 	i = 0;
 	while (s[i])
 		i++;

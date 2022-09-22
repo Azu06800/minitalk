@@ -12,11 +12,11 @@ $(LIBFT) :
 
 $(SERVER) : server.o minitalk.h
 	@$(CC) server.o $(LIBS) -o $@
-	@printf "\e[38;5;226m./$@ successfully build🥑\e[0m\n"
+	@printf "\e[38;5;226m./$@ successfully build\e[0m\n"
 
 $(CLIENT) : client.o minitalk.h
 	@$(CC) client.o $(LIBS) -o $@
-	@printf "\e[38;5;46m./$@ successfully build🥝\e[0m\n"
+	@printf "\e[38;5;46m./$@ successfully build\e[0m\n"
 
 %.o : %.c
 	@$(CC) $(FLAGS) $< -c -I includes
