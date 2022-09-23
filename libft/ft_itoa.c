@@ -6,13 +6,13 @@
 /*   By: nhamdan <nhamdan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 11:23:24 by nhamdan           #+#    #+#             */
-/*   Updated: 2021/12/13 15:36:14 by nhamdan          ###   ########.fr       */
+/*   Updated: 2022/09/23 17:49:38 by nhamdan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-	int	count_nbr(int n)
+int	count_nbr(int n)
 {
 	int	count;
 

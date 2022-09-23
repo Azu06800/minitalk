@@ -6,13 +6,13 @@
 /*   By: nhamdan <nhamdan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 07:38:28 by nhamdan           #+#    #+#             */
-/*   Updated: 2021/12/09 12:47:36 by nhamdan          ###   ########.fr       */
+/*   Updated: 2022/09/23 17:50:10 by nhamdan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*t1;
 	unsigned char	*t2;

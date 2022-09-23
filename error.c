@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhamdan <nhamdan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 13:28:19 by nhamdan           #+#    #+#             */
-/*   Updated: 2022/09/23 17:54:20 by nhamdan          ###   ########.fr       */
+/*   Created: 2022/09/23 19:08:10 by nhamdan           #+#    #+#             */
+/*   Updated: 2022/09/23 19:24:31 by nhamdan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minitalk.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_error_client(char *argv, int pid)
 {
-	size_t	ls1;
-	size_t	ls2;
-	size_t	ltot;
-	char	*dst;
-
-	if (!s1 || !s2)
-		return (NULL);
-	ls1 = ft_strlen(s1);
-	ls2 = ft_strlen(s2);
-	ltot = ls1 + ls2 + 1;
-	dst = malloc(sizeof(char) * ltot);
-	if (!dst)
-		return (NULL);
-	ft_memmove(dst, s1, ls1);
-	ft_memmove(dst + ls1, s2, ls2);
-	dst[ltot - 1] = '\0';
-	return (dst);
+	while (*argv)
+	{
+		if (!(ft_isdigit(*argv)) || pid <= 0)
+		{
+			ft_putstr_fd ("ERROR = PID MUST BE POSITIF NUMBER\n", 1);
+			exit (EXIT_FAILURE);
+		}
+		argv++;
+	}
 }
