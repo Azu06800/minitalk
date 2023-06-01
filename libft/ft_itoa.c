@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nhamdan <nhamdan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nihamdan <nihamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 11:23:24 by nhamdan           #+#    #+#             */
-/*   Updated: 2022/09/23 17:49:38 by nhamdan          ###   ########.fr       */
+/*   Created: 2023/03/27 09:43:11 by nihamdan          #+#    #+#             */
+/*   Updated: 2023/04/11 13:39:33 by nihamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 	long int	nbr;
 
 	i = count_nbr(n);
-	dst = malloc(i * sizeof(char) + 1);
+	dst = malloc(sizeof(char) *(i + 1));
 	if (!dst)
 		return (NULL);
 	nbr = n;

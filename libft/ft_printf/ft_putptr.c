@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nhamdan <nhamdan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nihamdan <nihamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 19:08:10 by nhamdan           #+#    #+#             */
-/*   Updated: 2022/09/23 19:24:31 by nhamdan          ###   ########.fr       */
+/*   Created: 2023/04/04 15:54:17 by nihamdan          #+#    #+#             */
+/*   Updated: 2023/04/07 10:32:05 by nihamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "ft_printf.h"
 
-void	ft_error_client(char *argv, int pid)
+int	ft_putptr(void *ptr)
 {
-	while (*argv)
-	{
-		if (!(ft_isdigit(*argv)) || pid <= 0)
-		{
-			ft_putstr_fd ("ERROR = PID MUST BE POSITIF NUMBER\n", 1);
-			exit (EXIT_FAILURE);
-		}
-		argv++;
-	}
+	size_t	tmp;
+	int		count;
+
+	tmp = (size_t) ptr;
+	count = 2;
+	write(1, "0x", 2);
+	count += ft_unsigned_base(tmp, "0123456789abcdef");
+	return (count);
 }

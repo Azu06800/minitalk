@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihamdan <nihamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 09:48:16 by nihamdan          #+#    #+#             */
-/*   Updated: 2023/03/27 09:48:45 by nihamdan         ###   ########.fr       */
+/*   Created: 2023/04/03 10:34:34 by nihamdan          #+#    #+#             */
+/*   Updated: 2023/04/07 10:27:51 by nihamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_toupper(int c)
+int	ft_putstr(char *str)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c -32);
-	return (c);
+	int	count;
+
+	count = 0;
+	if (str != NULL)
+	{
+		while (*str)
+		{
+			ft_putchar(*str);
+			str++;
+			count++;
+		}
+	}
+	else
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
+	return (count);
 }

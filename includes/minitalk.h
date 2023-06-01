@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nihamdan <nihamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 09:48:16 by nihamdan          #+#    #+#             */
-/*   Updated: 2023/03/27 09:48:45 by nihamdan         ###   ########.fr       */
+/*   Created: 2023/05/19 16:16:07 by nihamdan          #+#    #+#             */
+/*   Updated: 2023/05/30 17:41:05 by nihamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef MINITALK_H
+# define MINITALK_H
 
-int	ft_toupper(int c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (c -32);
-	return (c);
-}
+# include "../libft/libft.h"
+# include <sys/types.h>
+# include <unistd.h>
+# include <signal.h>
+
+int	check_error(int argc, char **argv);
+
+#endif

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   minitalk_bonus.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nhamdan <nhamdan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nihamdan <nihamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 18:12:24 by nhamdan           #+#    #+#             */
-/*   Updated: 2022/09/23 19:25:11 by nhamdan          ###   ########.fr       */
+/*   Created: 2023/06/01 17:21:38 by nihamdan          #+#    #+#             */
+/*   Updated: 2023/06/01 17:22:02 by nihamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#ifndef MINITALK_BONUS_H
+# define MINITALK_BONUS_H
 
-# include <signal.h>
+# include "../libft/libft.h"
+# include <sys/types.h>
 # include <unistd.h>
-# include <stdlib.h>
-# include "libft/libft.h"
+# include <signal.h>
 
-void	ft_error_client(char *argv, int pid);
+int	check_error(int argc, char **argv);
+
 #endif

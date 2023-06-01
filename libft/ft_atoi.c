@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nhamdan <nhamdan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nihamdan <nihamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/28 09:17:35 by nhamdan           #+#    #+#             */
-/*   Updated: 2021/12/14 19:33:00 by nhamdan          ###   ########.fr       */
+/*   Created: 2023/03/27 09:42:15 by nihamdan          #+#    #+#             */
+/*   Updated: 2023/05/30 17:20:39 by nihamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,23 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	r;
-	int	s;
+	int	sign;
+	int	result;
 
-	i = 0;
-	r = 0;
-	s = 1;
-	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
-		i++;
-	if (str[i] == '-')
+	sign = 1;
+	result = 0;
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		s = -1;
-		i++;
+		if (*str == '-')
+			sign *= (-1);
+		str++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] != '\0')
+	while (*str && *str >= '0' && *str <= '9')
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			r = r * 10 + str[i] - '0';
-		else
-			break ;
-		i++;
+		result = result * 10 + *str - 48;
+		str++;
 	}
-	return (s * r);
+	return (sign * result);
 }
